@@ -1,0 +1,19 @@
+<div class="col-md-3" *ngIf="terrain.type==type || type==''|| type==null">
+<div class="card" style="width: 18rem;"  *ngIf="terrain.prix<=price || price==0||price==null">
+ <div  *ngIf="terrain.endroit==endroit || endroit==''|| endroit==null">
+  <img src="../../assets/template/img/back2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+       <h1 class="card-text">{{terrain.endroit}}</h1>
+      <p class="card-text">{{terrain.prix}} DT</p>
+    <h5 class="card-title">{{terrain.type}}</h5>
+    <p class="card-text">{{terrain.etat}}</p>
+  </div>
+ 
+
+  <div class="card-body">
+    <a  class="card-link"  [routerLink]="['detail',terrain.id]">Details</a>
+    <button class="btn btn-warning" style="margin-left:30px;"(click)="envoieNotification()">Like  {{terrain.likes}}</button>
+  </div>
+  </div>
+</div>
+</div>

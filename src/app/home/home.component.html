@@ -1,0 +1,18 @@
+<div class="row" style="margin-left: 10px;padding-left: 10px; margin-bottom :10px;background-color: whitesmoke; margin-left: 0px;">
+ <div class="row" style="margin-left: 10px;padding-left: 10px; background-color: whitesmoke; margin-left: 0px;">
+
+  <select  [(ngModel)]="type" name="type" class="browser-default custom-select" style="width:250px;margin-top: 10px;">
+       <option>Dur interieur</option>
+      <option>Dur exterieur</option>
+      <option>gazon exterieur</option>
+      <option>terre battue</option>
+ <option>terre battue interieur</option>
+</select>
+   <input type="number" name="prix" class="form-control" [(ngModel)]="prix" placeholder="250">
+        <input type="text" name="prix" class="form-control" [(ngModel)]="endroit" placeholder="Endroit" >
+</div>
+</div>
+<div class="row" style="margin-left: 10px;padding-left: 10px;">
+
+<app-afficher-terrain  *ngFor="let p of listsTerrain  "[terrain]="p" [price]="prix" [endroit]="endroit" [type]="type" (notification)="incremtLike($event)"></app-afficher-terrain>
+</div>

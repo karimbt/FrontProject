@@ -1,0 +1,31 @@
+<div class="placeholder">
+    <div class="parallax-window" data-parallax="scroll"
+         style="background-image: url('../assets/template/img/header.jpg');"
+         data-image-src="../assets/template/img/header.jpg">
+        <div class="tm-header">
+            <div class="row tm-header-inner">
+                <div class="col-md-6 col-12">
+                    <img src="../assets/template/img/simple-house-logo.png" alt="Logo" class="tm-site-logo"/>
+                    <div class="tm-site-text-box">
+                        <h1 class="tm-site-title">LTT</h1>
+                        <h6 class="tm-site-description">Faciliter la location des terrains de tennis </h6>
+                    </div>
+                </div>
+                <nav class="col-md-6 col-12 tm-nav">
+                    <ul class="tm-nav-ul">
+                        <li class="tm-nav-li"><a routerLink="/home" class="tm-nav-link active">Acceuil</a></li>
+                        <li class="tm-nav-li" *ngIf="user !=null"><a routerLink="/ajouterTerrain" class="tm-nav-link">Ajouter
+                            Terrain</a></li>
+                        <li class="tm-nav-li" *ngIf="user !=null"><a routerLink="/listUser" class="tm-nav-link">Liste
+                            terrain</a></li>
+                        <li class="tm-nav-li" *ngIf="user !=null"><a (click)="logout()" routerLink="/home"
+                                                                     class="tm-nav-link">Déconnexion</a></li>
+
+                        <li class="tm-nav-li" *ngIf="user ==null"><a routerLink="/login"
+                                                                     class="tm-nav-link">connexion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

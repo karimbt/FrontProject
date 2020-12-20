@@ -1,0 +1,67 @@
+<h1 style="font-family: 'Georgia';font-size:50px;  font-weight: 900;color:rgb(7,161,238);margin-bottom: 20px;margin-left: 200px;">
+    Ajouter un local</h1>
+<form #f="ngForm" style="margin-left: 0px; width: 800px;">
+    <div class="form-group">
+        <label for="endroit"
+               style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Adresse
+            :</label>
+        <input type="text" name="endroit" class="form-control" [(ngModel)]="terrain.endroit" #t="ngModel"
+               required
+               minlength="3">
+    </div>
+    <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+        <div *ngIf="t.errors.required">Veuillez saisir l'endroit</div>
+        <div *ngIf="t.errors.minlength">Endroit doit contenir au moins 3 lettres</div>
+        <div *ngIf="t.errors.pattern">Endroit ne doit pas contenir des caracteres spéciaux</div>
+    </div>
+    <div class="form-group">
+        <label for="prix"
+               style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Prix
+            :</label>
+        <input type="number" name="prix" class="form-control" [(ngModel)]="terrain.prix" #q="ngModel"
+               required>
+    </div>
+    <div class="alert alert-danger" *ngIf="q.invalid && q.touched">
+        Veuillez saisir le prix
+    </div>
+    <div class="alert alert-danger" *ngIf="q.value<0">
+        prix doit etre positif
+    </div>
+
+    <div class="form-group">
+        <label for="typee"
+               style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Type
+            :</label>
+        <select style="font-family: 'Georgia';font-size:10px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;"
+                name="typee" class="form-control" [(ngModel)]="terrain.type" #i="ngModel" required>
+            <option>Dur interieur</option>
+            <option>Dur exterieur</option>
+            <option>gazon exterieur</option>
+            <option>terre battue</option>
+        </select>
+    </div>
+    <div class="alert alert-danger" *ngIf="i.invalid && i.touched">
+        Le type est obligatoire
+    </div>
+
+    <div class="form-group">
+        <label for="type"
+               style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Etat
+            :</label>
+        <select name="type" class="form-control" [(ngModel)]="terrain.etat" #k="ngModel" required>
+            <option>Disponnible</option>
+            <option>Non disponnible</option>
+
+        </select>
+    </div>
+    <div class="alert alert-danger" *ngIf="k.invalid && k.touched">
+        L'état est obligatoire
+    </div>
+
+
+    <button class="btn btn-danger" [disabled]="f.invalid" (click)="ajouter();" style="width: 800px;height: 40px;">
+        Ajouter
+    </button>
+</form>
+
+<h1></h1>

@@ -19,7 +19,11 @@
     "@angular/platform-browser": "~9.1.12",
     "@angular/platform-browser-dynamic": "~9.1.12",
     "@angular/router": "~9.1.12",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.5.4",
+    "tether": "^1.4.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -41,6 +45,10 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "browser-sync": "2.26.13",
+    "del": "6.0.0",
+    "gulp": "4.0.2",
+    "merge-stream": "2.0.0"
   }
 }

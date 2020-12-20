@@ -1,0 +1,61 @@
+<h1 style="font-family: 'Georgia';font-size:50px;  font-weight: 900;color:rgb(7,161,238);margin-bottom: 20px;margin-left: 200px;">Modifier votre local</h1>
+ <form [formGroup]="detailForm"  style="margin-left: 0px; width: 800px;">
+   
+     <div class="form-group">
+    <label style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Endroit: </label>
+    <input type="text" formControlName="endroit" class="form-control" value="{{terrain2.endroit}}" >
+  </div>
+  <div class="alert alert-danger" *ngIf="detailForm.get('endroit').errors
+   && detailForm.controls['endroit'].touched">
+    <div *ngIf="detailForm.controls['endroit'].hasError('required')">
+Veuillez saisir votre endroit    </div>
+    <div *ngIf="detailForm.controls['endroit'].hasError('pattern')">
+Le champs endroit ne contient pas des caractères spéciaux    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Prix : </label>
+    <input type="number" formControlName="prix" class="form-control" value="{{terrain2.prix}}">
+  </div>
+  <div class="alert alert-danger" *ngIf="detailForm.get('prix').errors
+   && detailForm.controls['prix'].touched">
+    <div *ngIf="detailForm.controls['prix'].hasError('required')">
+Veuillez saisir le prix    </div>
+  </div>
+
+
+
+   
+    <div class="form-group">
+      <label style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Type:  {{terrain.type}}</label>
+      <select  formControlName="type" class="form-control" value="{{terrain2.type}}">
+     <option>Dur interieur</option>
+     <option>Dur exterieur</option>
+     <option>gazon exterieur</option>
+     <option>terre battue</option>
+<option>terre battue interieur</option>
+      </select>
+    </div>
+  <div class="form-group">
+    <label style="font-family: 'Georgia';font-size:20px;  font-weight: 700;color:rgb(7,161,238);margin-bottom: 5px;margin-left: 10px;">Etat: {{terrain.etat}}</label>
+    <select  formControlName="etat" class="form-control" value="{{terrain2.etat}}" >
+   <option>Disponnible</option>
+   <option>Non disponnible</option>
+    </select>
+  </div>
+ <div class="alert alert-danger" *ngIf="detailForm.get('etat').errors
+ && detailForm.controls['etat'].touched">
+   <div *ngIf="detailForm.controls['etat'].hasError('required')">
+     Etat is a required field
+   </div>
+
+ </div>
+
+
+
+
+
+  <button type="submit" style="width: 800px;height: 40px;" class="btn btn-danger"   (click)="onSubmit() ">Submit</button>
+</form>
+

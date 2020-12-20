@@ -1,0 +1,18 @@
+
+<div class="col-md-3" *ngFor="let p of listTerrain | async ">
+  <div class="card" style="width: 18rem;">
+    <img src="../../assets/template/img/back2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+          <h1 class="card-text">{{p.endroit}}</h1>
+      <p class="card-text">{{p.prix}} DT</p>
+
+      <h5 class="card-title">{{p.type}}</h5>
+      <p class="card-text">{{p.etat}}</p>
+    </div>
+
+    <div class="card-body">
+      <a href="#" class="card-link"  [routerLink]="['update',p.id]">Update</a>
+      <a href="#" class="card-link"(click)="delete(p.id)">supprimer</a>
+    </div>
+  </div>
+  </div>

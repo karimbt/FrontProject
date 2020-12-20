@@ -1,0 +1,37 @@
+<h1 style="font-family: 'Georgia';font-size:50px;  font-weight: 900;color:rgb(238, 104, 104);margin-bottom: 20px;margin-left: 200px;">Modifier votre local</h1>
+ <form [formGroup]="ajout"  style="margin-left: 0px; width: 800px;">
+
+
+
+  <div class="form-group">
+
+    <input type="date"  formControlName="date" class="form-control">
+  </div>
+ <div class="alert alert-danger" *ngIf="ajout.get('date').errors
+ && ajout.controls['date'].touched">
+   <div *ngIf="ajout.controls['date'].hasError('required')">
+     date is a required field
+   </div>
+
+ </div>
+
+
+ <div class="form-group">
+
+  <input type="time"  formControlName="duree" class="form-control">
+</div>
+<div class="alert alert-danger" *ngIf="ajout.get('duree').errors
+&& ajout.controls['duree'].touched">
+ <div *ngIf="ajout.controls['duree'].hasError('required')">
+   duree is a required field
+ </div>
+
+</div>
+
+
+
+
+
+  <button type="submit" style="width: 800px;height: 40px;" class="btn btn-danger"   (click)="onSubmit() ">Submit</button>
+</form>
+
